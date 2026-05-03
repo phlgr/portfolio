@@ -6,3 +6,5 @@ await Bun.build({
 	minify: true,
 	plugins: [tailwind],
 });
+
+Bun.write("./dist/preview.png", Bun.file("./preview.png"));
