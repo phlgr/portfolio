@@ -64,7 +64,7 @@
       <aside class="side">
         <img class="avatar" src="./assets/avatar.jpg" width="360" height="360" alt="Philipp Gartz" />
 
-        <section class="box" aria-labelledby="now-title">
+        <section class="info" aria-labelledby="now-title">
           <h2 id="now-title">right now</h2>
           <dl>
             <dt>local time</dt><dd id="local-time">--:--</dd>
@@ -73,20 +73,12 @@
           </dl>
         </section>
 
-        <section class="box" id="contact" aria-labelledby="contact-title">
+        <section class="info" id="contact" aria-labelledby="contact-title">
           <h2 id="contact-title">say hi</h2>
           <p><a href="mailto:philipp@gartz.dev">philipp@gartz.dev</a></p>
           <p><a href="https://github.com/phlgr" target="_blank" rel="noopener noreferrer">github</a> / <a href="https://www.linkedin.com/in/philipp-gartz/" target="_blank" rel="noopener noreferrer">linkedin</a></p>
         </section>
 
-        <ul class="buttons" aria-label="Site badges">
-          <li class="b88"><i>made with</i><b>bun</b></li>
-          <li class="b88"><i>written in</i><b>ts</b></li>
-          <li class="b88"><i>no</i><b>cookies</b></li>
-          <li class="b88"><i>made in</i><b>germany</b></li>
-          <li class="b88"><i>best viewed</i><b>anywhere</b></li>
-          <li><a class="b88" href="https://github.com/phlgr/portfolio" target="_blank" rel="noopener noreferrer"><i>view</i><b>source</b></a></li>
-        </ul>
       </aside>
 
       <main class="main">
@@ -146,7 +138,7 @@
         </section>
 
         <section aria-labelledby="stack-title">
-          <h2 class="tape" id="stack-title">interests (the technical kind)</h2>
+          <h2 class="tape" id="stack-title">stack</h2>
           <dl class="stack">
             <dt>frontend</dt><dd>typescript, react, tailwind css, tanstack router, query and start</dd>
             <dt>backend</dt><dd>bun, elysia, trpc, drizzle orm</dd>
@@ -155,12 +147,20 @@
             <dt>infra</dt><dd>docker, hetzner, dokploy, cloudflare</dd>
           </dl>
         </section>
-
-        <a class="guestbook" href="mailto:philipp@gartz.dev?subject=Guestbook">sign my guestbook ✎</a>
       </main>
     </div>
 
-    <footer class="foot">© <span id="year"></span> philipp gartz</footer>
+    <footer class="foot">
+      <ul class="buttons" aria-label="Site badges">
+        <li class="b88"><i>made with</i><b>bun</b></li>
+        <li class="b88"><i>written in</i><b>ts</b></li>
+        <li class="b88"><i>no</i><b>cookies</b></li>
+        <li class="b88"><i>made in</i><b>germany</b></li>
+        <li class="b88"><i>best viewed</i><b>anywhere</b></li>
+        <li><a class="b88" href="https://github.com/phlgr/portfolio" target="_blank" rel="noopener noreferrer"><i>view</i><b>source</b></a></li>
+      </ul>
+      <p><a href="mailto:philipp@gartz.dev?subject=Guestbook">sign my guestbook</a> · © <span id="year"></span> philipp gartz</p>
+    </footer>
   </div>
   <script src="./src/app.js"></script>
   <script defer data-domain="philipp.gartz.dev" src="https://apps.gartz.dev/js/script.js"></script>

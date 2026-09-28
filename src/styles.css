@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 :root {
-	--bg: #eeedf5;
+	--bg: #f5f4fa;
+	--line: #dcdae8;
 	--ink: #17152b;
 	--soft: #5d5a78;
 	--violet: #5b3df5;
@@ -30,7 +31,7 @@
 	a {
 		color: var(--violet);
 		text-decoration: underline;
-		text-decoration-thickness: 2px;
+		text-decoration-thickness: 1px;
 		text-underline-offset: 3px;
 	}
 
@@ -62,7 +63,7 @@
 	grid-template-columns: auto minmax(0, 1fr);
 	gap: 32px;
 	align-items: end;
-	margin-bottom: 48px;
+	margin-bottom: 64px;
 }
 
 .head h1 {
@@ -83,14 +84,14 @@
 .layout {
 	display: grid;
 	grid-template-columns: 260px minmax(0, 1fr);
-	gap: 48px;
+	gap: 64px;
 	align-items: start;
 }
 
 /* Sidebar */
 .side {
 	display: grid;
-	gap: 20px;
+	gap: 28px;
 	position: sticky;
 	top: 24px;
 }
@@ -100,38 +101,35 @@
 	height: auto;
 	aspect-ratio: 1;
 	object-fit: cover;
-	border: 8px solid var(--paper);
-	border-radius: 4px;
-	box-shadow: 6px 6px 0 var(--ink);
-	transform: rotate(-3deg);
+	border: 6px solid var(--paper);
+	border-radius: 3px;
+	box-shadow: 0 8px 24px #17152b24;
+	transform: rotate(-2deg);
 }
 
-.box {
-	background: var(--paper);
-	border: 2px solid var(--ink);
-	border-radius: 10px;
-	padding: 12px 14px;
+.info {
+	padding-top: 12px;
+	border-top: 1px solid var(--line);
 	font-size: 0.92rem;
 }
 
-.box h2 {
+.info h2 {
 	margin-bottom: 6px;
-	font-size: 1rem;
 	font-weight: 800;
 }
 
-.box p {
+.info p {
 	margin-bottom: 4px;
 	overflow-wrap: anywhere;
 }
 
-.box dl {
+.info dl {
 	display: grid;
 	grid-template-columns: auto 1fr;
 	gap: 2px 12px;
 }
 
-.box dt {
+.info dt {
 	color: var(--soft);
 }
 
@@ -144,6 +142,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 6px;
+	margin-bottom: 16px;
 }
 
 .b88 {
@@ -195,32 +194,29 @@ a.b88:hover {
 /* Main column */
 .main {
 	display: grid;
-	gap: 56px;
+	gap: 64px;
 	min-width: 0;
 }
 
 .tape {
 	display: inline-block;
-	margin-bottom: 18px;
-	padding: 0 8px;
-	font-size: 1.6rem;
+	margin-bottom: 20px;
+	font-size: 1.15rem;
 	font-weight: 800;
-	background: var(--yellow);
-	transform: rotate(-1deg);
+	background: linear-gradient(transparent 62%, var(--yellow) 62%);
 }
 
 .about {
-	max-width: 36ch;
-	font-size: clamp(1.35rem, 2.6vw, 1.9rem);
-	line-height: 1.3;
-	font-weight: 500;
+	max-width: 42ch;
+	font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+	line-height: 1.4;
 }
 
 /* Projects */
 .projects {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-	gap: 32px 22px;
+	gap: 40px 24px;
 }
 
 .projects li {
@@ -246,10 +242,9 @@ a.b88:hover {
 	margin-bottom: 8px;
 	object-fit: cover;
 	object-position: top;
-	border: 2px solid var(--ink);
-	border-radius: 10px;
+	border: 1px solid var(--line);
+	border-radius: 8px;
 	background: var(--paper);
-	box-shadow: 4px 4px 0 var(--ink);
 	transition:
 		transform 150ms,
 		box-shadow 150ms;
@@ -257,18 +252,18 @@ a.b88:hover {
 
 .card:hover .shot,
 .card:focus-visible .shot {
-	transform: translate(-2px, -2px);
-	box-shadow: 6px 6px 0 var(--violet);
+	transform: translateY(-3px);
+	box-shadow: 0 10px 24px #5b3df526;
 }
 
 .card strong {
-	font-size: 1.1rem;
+	font-size: 1.05rem;
 	overflow-wrap: anywhere;
 }
 
 .card:hover strong {
 	text-decoration: underline;
-	text-decoration-thickness: 2px;
+	text-decoration-thickness: 1px;
 	text-underline-offset: 3px;
 }
 
@@ -325,37 +320,13 @@ a.b88:hover {
 }
 
 .stack dt {
-	font-weight: 800;
-}
-
-.guestbook {
-	justify-self: start;
-	padding: 10px 18px;
-	border: 2px solid var(--ink);
-	border-radius: 999px;
-	background: var(--pink);
-	color: var(--ink);
-	font-weight: 800;
-	text-decoration: none;
-	box-shadow: 3px 3px 0 var(--ink);
-	transition:
-		transform 150ms,
-		box-shadow 150ms;
-}
-
-.guestbook:hover {
-	background: var(--pink);
-	transform: translate(-1px, -1px);
-	box-shadow: 4px 4px 0 var(--ink);
-}
-
-.guestbook:active {
-	transform: translate(2px, 2px);
-	box-shadow: 1px 1px 0 var(--ink);
+	font-weight: 700;
 }
 
 .foot {
-	margin-top: 64px;
+	margin-top: 96px;
+	padding-top: 24px;
+	border-top: 1px solid var(--line);
 	font-size: 0.85rem;
 	color: var(--soft);
 }
@@ -371,6 +342,10 @@ a.b88:hover {
 		gap: 24px;
 	}
 
+	.layout {
+		gap: 48px;
+	}
+
 	.head {
 		margin-bottom: 32px;
 	}
@@ -383,15 +358,15 @@ a.b88:hover {
 	}
 
 	.avatar {
-		border-width: 5px;
-		box-shadow: 4px 4px 0 var(--ink);
+		border-width: 4px;
 	}
 
-	.box {
-		padding: 10px 12px;
+	.info:first-of-type {
+		padding-top: 0;
+		border-top: 0;
 	}
 
-	.box dt {
+	.info dt {
 		white-space: nowrap;
 	}
 
@@ -400,7 +375,7 @@ a.b88:hover {
 	}
 
 	.main {
-		gap: 44px;
+		gap: 56px;
 	}
 
 	.projects {
@@ -424,8 +399,7 @@ a.b88:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.shot,
-	.guestbook {
+	.shot {
 		transition: none;
 	}
 }
