@@ -287,7 +287,7 @@ main {
 /* ── Stack bands ────────────────────────────────────── */
 .bands {
 	position: relative;
-	height: 280px;
+	height: 380px;
 }
 
 .band {
@@ -306,16 +306,22 @@ main {
 }
 
 .band-a {
-	top: 38%;
+	top: 30%;
 	background: var(--yellow);
-	transform: translateY(-50%) rotate(-4deg);
+	transform: translateY(-50%) rotate(-3.5deg);
 }
 
 .band-b {
-	top: 64%;
+	top: 54%;
 	background: var(--violet);
 	color: var(--paper);
 	transform: translateY(-50%) rotate(3deg);
+}
+
+.band-c {
+	top: 74%;
+	background: var(--pink);
+	transform: translateY(-50%) rotate(-1.5deg);
 }
 
 .track {
@@ -326,7 +332,11 @@ main {
 
 .band-b .track {
 	animation-direction: reverse;
-	animation-duration: 120s;
+	animation-duration: 90s;
+}
+
+.band-c .track {
+	animation-duration: 110s;
 }
 
 .track span {
@@ -629,17 +639,22 @@ main {
 	}
 
 	.bands {
-		height: 300px;
+		height: 340px;
 	}
 
 	.band-a {
-		top: 50%;
-		transform: translateY(-50%) rotate(-9deg);
+		top: 34%;
+		transform: translateY(-50%) rotate(-11deg);
 	}
 
 	.band-b {
-		top: 50%;
-		transform: translateY(-50%) rotate(8deg);
+		top: 48%;
+		transform: translateY(-50%) rotate(6deg);
+	}
+
+	.band-c {
+		top: 70%;
+		transform: translateY(-50%) rotate(-3deg);
 	}
 
 	.sheet {
