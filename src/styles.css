@@ -629,17 +629,17 @@ main {
 	}
 
 	.bands {
-		height: 220px;
+		height: 300px;
 	}
 
 	.band-a {
-		top: 30%;
-		transform: translateY(-50%) rotate(-3deg);
+		top: 50%;
+		transform: translateY(-50%) rotate(-9deg);
 	}
 
 	.band-b {
-		top: 72%;
-		transform: translateY(-50%) rotate(2deg);
+		top: 50%;
+		transform: translateY(-50%) rotate(8deg);
 	}
 
 	.sheet {
