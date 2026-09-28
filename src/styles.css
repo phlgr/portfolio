@@ -540,64 +540,6 @@ main {
 	color: #8d89ad;
 }
 
-/* 88x31 buttons */
-.buttons {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 6px;
-}
-
-.b88 {
-	width: 88px;
-	height: 31px;
-	display: flex;
-	overflow: hidden;
-	border: 1px solid var(--paper);
-	font-size: 9px;
-	font-weight: 700;
-	line-height: 1;
-	text-decoration: none;
-	color: var(--ink);
-	transition: transform 300ms var(--ease-spring);
-}
-
-.sheet a.b88 {
-	color: var(--ink);
-	background: none;
-}
-
-.b88:hover,
-.buttons li:hover .b88 {
-	transform: translateY(-3px) rotate(-3deg);
-}
-
-.b88 i {
-	flex: 0 0 38px;
-	display: grid;
-	place-items: center;
-	padding: 2px;
-	text-align: center;
-	font-style: normal;
-	background: var(--ink);
-	color: var(--paper);
-}
-
-.b88 b {
-	flex: 1;
-	display: grid;
-	place-items: center;
-	font-size: 10px;
-	background: var(--yellow);
-}
-
-.buttons li:nth-child(3n + 2) b {
-	background: var(--pink);
-}
-
-.buttons li:nth-child(3n) b {
-	background: var(--sky);
-}
-
 /* ── Scroll reveals ─────────────────────────────────── */
 .js [data-reveal] {
 	opacity: 0;
