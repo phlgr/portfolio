@@ -146,7 +146,7 @@ main {
 }
 
 .js .name .ch {
-	animation: rise 1100ms var(--ease-out) both;
+	animation: rise 1100ms var(--ease-out) backwards;
 	animation-delay: calc(var(--i) * 45ms + 80ms);
 }
 
@@ -183,7 +183,7 @@ main {
 }
 
 .js .sticker {
-	animation: slap 900ms var(--ease-spring) 700ms both;
+	animation: slap 900ms var(--ease-spring) 700ms backwards;
 }
 
 @keyframes slap {
@@ -241,7 +241,7 @@ main {
 }
 
 .js .intro {
-	animation: fade-up 900ms var(--ease-out) both;
+	animation: fade-up 900ms var(--ease-out) backwards;
 }
 
 .js .tagline {
