@@ -9,6 +9,7 @@
   <meta name="description" content="Portfolio of Philipp Gartz (phlgr), a full-stack TypeScript developer from Germany. Building scrapers, indexers, and apps with Bun, Elysia, React, and TanStack." />
   <meta name="keywords" content="Philipp Gartz, phlgr, full-stack developer, TypeScript developer, portfolio, web developer, Germany, Bun, Elysia, React, scraper, indexer" />
   <meta name="author" content="Philipp Gartz" />
+  <meta name="theme-color" content="#0d2640" />
   <link rel="canonical" href="https://philipp.gartz.dev" />
 
   <!-- Open Graph -->
@@ -47,211 +48,138 @@
   }</script>
 
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" />
   <link rel="stylesheet" href="./src/styles.css" />
 </head>
 <body>
-  <!-- Top status bar -->
-  <header class="border-b border-accent px-4 py-2 md:px-8">
-    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-xs tracking-wider">
-      <span class="text-accent font-bold">phlgr</span>
-      <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-muted">
-        <span>age: <span id="age">0.0000000000</span></span>
-        <span class="text-dim">│</span>
-        <span>utc+02:00</span>
-        <span class="text-dim">│</span>
-        <span>germany</span>
-      </div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="logo" href="#top">phlgr<span>.dev</span></a>
+      <nav aria-label="Sections">
+        <a href="#projects">Projects</a>
+        <a href="#stack">Stack</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
-  <main class="max-w-5xl mx-auto px-4 py-12 md:px-8">
-    <!-- Hero -->
-    <section class="mb-16">
-      <h1 class="text-2xl md:text-3xl font-bold text-white mb-2 tracking-tight">philipp gartz</h1>
-      <p class="text-muted text-sm mb-1">full-stack typescript developer</p>
-      <p class="text-dim text-xs"><span class="text-accent">→</span> scrapers, indexers, and the apps that sit on top<span
-          class="blink text-accent ml-0.5">█</span></p>
-    </section>
-    <!-- Projects -->
-    <section class="mb-16">
-      <div class="flex items-center gap-3 mb-4">
-        <h2 class="text-xs font-bold tracking-widest text-muted uppercase">projects</h2>
-        <div class="flex-1 h-px bg-sep"></div>
-      </div>
-      <!-- Table header -->
-      <div
-        class="hidden md:grid grid-cols-[200px_1fr_140px] gap-4 border-b border-accent py-2 text-xs tracking-wider text-dim uppercase">
-        <span>project</span>
-        <span>description</span>
-        <span>tech</span>
-      </div>
-      <!-- Project: examensradar -->
-      <div class="grid grid-cols-1 md:grid-cols-[200px_1fr_140px] gap-2 md:gap-4 py-3 md:py-4 border-b border-accent items-start hover:bg-white/[0.02] transition-colors duration-150">
-          <div class="flex items-center gap-2 md:block">
-            <span class="text-accent text-xs md:hidden">▸</span>
-            <a href="https://examensradar.de" target="_blank" rel="noopener noreferrer"
-              class="text-sm font-bold text-white hover:text-accent underline-offset-4 hover:underline">examensradar</a>
-            <a href="https://github.com/phlgr/examensradar" target="_blank" rel="noopener noreferrer"
-              class="text-xs text-dim hover:text-accent ml-1 md:hidden">[gh]</a>
-            <a href="https://github.com/phlgr/examensradar" target="_blank" rel="noopener noreferrer"
-              class="hidden md:block text-xs text-dim hover:text-accent underline-offset-2 hover:underline mt-0.5">→ github.com/phlgr/...</a>
-          </div>
-          <p class="text-sm text-muted">push notifications for german law students waiting on their state exam results</p>
-          <div class="flex flex-wrap gap-1.5 md:col-start-3">
-            <span class="text-xs px-1.5 py-0.5 rounded-none border border-accent text-dim">typescript</span>
-            <span class="text-xs px-1.5 py-0.5 rounded-none border border-accent text-dim">tRPC</span>
-            <span class="text-xs px-1.5 py-0.5 rounded-none border border-accent text-dim">tanstack start</span>
-          </div>
+
+  <main id="top" class="profile">
+    <!-- Left column -->
+    <aside class="side">
+      <section class="panel identity">
+        <img class="avatar" src="./assets/avatar.jpg" width="180" height="180" alt="Philipp Gartz" />
+        <h1>Philipp Gartz</h1>
+        <p class="handle">phlgr</p>
+        <p class="tagline">Full-stack TypeScript developer</p>
+        <p class="status" id="status"><span class="dot"></span><span id="status-text">Online</span></p>
+      </section>
+
+
+      <section class="panel" id="contact" aria-labelledby="contact-title">
+        <h2 class="panel-title" id="contact-title">Contact</h2>
+        <div class="panel-body contact">
+          <a class="btn btn-primary" href="mailto:philipp@gartz.dev">Send an email</a>
+          <a class="btn" href="https://github.com/phlgr" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/philipp-gartz/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
-      <!-- Project: eisdealer-tracker -->
-      <div class="grid grid-cols-1 md:grid-cols-[200px_1fr_140px] gap-2 md:gap-4 py-3 md:py-4 border-b border-accent items-start hover:bg-white/[0.02] transition-colors duration-150">
-          <div class="flex items-center gap-2 md:block">
-            <span class="text-accent text-xs md:hidden">▸</span>
-            <a href="https://eisdealer.gartz.dev" target="_blank" rel="noopener noreferrer"
-              class="text-sm font-bold text-white hover:text-accent underline-offset-4 hover:underline">eisdealer-tracker</a>
-            <a href="https://github.com/phlgr/eisdealer-flavor-tracker" target="_blank" rel="noopener noreferrer"
-              class="text-xs text-dim hover:text-accent ml-1 md:hidden">[gh]</a>
-            <a href="https://github.com/phlgr/eisdealer-flavor-tracker" target="_blank" rel="noopener noreferrer"
-              class="hidden md:block text-xs text-dim hover:text-accent underline-offset-2 hover:underline mt-0.5">→ github.com/phlgr/...</a>
-          </div>
-          <p class="text-sm text-muted">today's ice cream flavors at die eisdealer, scraped from IG stories via gemini vision with statistics</p>
-          <div class="flex flex-wrap gap-1.5 md:col-start-3">
-            <span class="text-xs px-1.5 py-0.5 rounded-none border border-accent text-dim">typescript</span>
-            <span class="text-xs px-1.5 py-0.5 rounded-none border border-accent text-dim">react</span>
-            <span class="text-xs px-1.5 py-0.5 rounded-none border border-accent text-dim">tanstack start</span>
-          </div>
+      </section>
+
+      <section class="panel info" aria-labelledby="details-title">
+        <h2 class="panel-title" id="details-title">Details</h2>
+        <dl class="panel-body details">
+          <dt>Age</dt><dd class="ticker" id="age">0.0000000000</dd>
+          <dt>Location</dt><dd>Germany</dd>
+          <dt>Local time</dt><dd id="local-time">—</dd>
+          <dt>Email</dt><dd><a href="mailto:philipp@gartz.dev">philipp@gartz.dev</a></dd>
+          <dt>Web</dt><dd><a href="https://philipp.gartz.dev">philipp.gartz.dev</a></dd>
+        </dl>
+      </section>
+    </aside>
+
+    <!-- Right column -->
+    <div class="content">
+      <section class="panel about" aria-labelledby="about-title">
+        <h2 class="panel-title" id="about-title">About me</h2>
+        <div class="panel-body prose">
+          <p>I build scrapers, indexers, and the apps that sit on top. Most of my side projects start with public data that's annoying to read — a city issue tracker, an Instagram story, an exam office website — and end as a small app that makes it readable.</p>
+          <p>I work across the stack in TypeScript, from the scraper and database to the interface, and I host what I build myself.</p>
         </div>
-      <!-- Project: gittertiere -->
-      <div class="grid grid-cols-1 md:grid-cols-[200px_1fr_140px] gap-2 md:gap-4 py-3 md:py-4 border-b border-accent items-start hover:bg-white/[0.02] transition-colors duration-150">
-          <div class="flex items-center gap-2 md:block">
-            <span class="text-accent text-xs md:hidden">▸</span>
-            <a href="https://gittertiere.gartz.dev" target="_blank" rel="noopener noreferrer"
-              class="text-sm font-bold text-white hover:text-accent underline-offset-4 hover:underline">gittertiere</a>
-            <a href="https://github.com/phlgr/gittertiere" target="_blank" rel="noopener noreferrer"
-              class="text-xs text-dim hover:text-accent ml-1 md:hidden">[gh]</a>
-            <a href="https://github.com/phlgr/gittertiere" target="_blank" rel="noopener noreferrer"
-              class="hidden md:block text-xs text-dim hover:text-accent underline-offset-2 hover:underline mt-0.5">→ github.com/phlgr/...</a>
-          </div>
-          <p class="text-sm text-muted">tracks mönchengladbach's stray shopping carts, scraped from the city's public issue tracker</p>
-          <div class="flex flex-wrap gap-1.5 md:col-start-3">
-            <span class="text-xs px-1.5 py-0.5 rounded-none border border-accent text-dim">typescript</span>
-            <span class="text-xs px-1.5 py-0.5 rounded-none border border-accent text-dim">react</span>
-            <span class="text-xs px-1.5 py-0.5 rounded-none border border-accent text-dim">leaflet</span>
-          </div>
-        </div>
-      <!-- Project: changebot -->
-      <div class="grid grid-cols-1 md:grid-cols-[200px_1fr_140px] gap-2 md:gap-4 py-3 md:py-4 border-b border-accent items-start hover:bg-white/[0.02] transition-colors duration-150">
-          <div class="flex items-center gap-2 md:block">
-            <span class="text-accent text-xs md:hidden">▸</span>
-            <a href="https://github.com/phlgr/changebot" target="_blank" rel="noopener noreferrer"
-              class="text-sm font-bold text-white hover:text-accent underline-offset-4 hover:underline">changebot</a>
-            <a href="https://github.com/phlgr/changebot" target="_blank" rel="noopener noreferrer"
-              class="text-xs text-dim hover:text-accent ml-1 md:hidden">[gh]</a>
-          </div>
-          <p class="text-sm text-muted">watches pages for changes and pings you on ntfy.sh, powered by bun & github actions</p>
-          <div class="flex flex-wrap gap-1.5 md:col-start-3">
-            <span class="text-xs px-1.5 py-0.5 rounded-none border border-accent text-dim">typescript</span>
-            <span class="text-xs px-1.5 py-0.5 rounded-none border border-accent text-dim">github actions</span>
-          </div>
-        </div>
-      <!-- Project: moenchengladbach-history -->
-      <div class="grid grid-cols-1 md:grid-cols-[200px_1fr_140px] gap-2 md:gap-4 py-3 md:py-4 border-b border-accent items-start hover:bg-white/[0.02] transition-colors duration-150">
-          <div class="flex items-center gap-2 md:block">
-            <span class="text-accent text-xs md:hidden">▸</span>
-            <a href="https://moenchengladbach-history.gartz.dev" target="_blank" rel="noopener noreferrer"
-              class="text-sm font-bold text-white hover:text-accent underline-offset-4 hover:underline">moenchengladbach-history</a>
-            <a href="https://github.com/phlgr/moenchengladbach-history" target="_blank" rel="noopener noreferrer"
-              class="text-xs text-dim hover:text-accent ml-1 md:hidden">[gh]</a>
-            <a href="https://github.com/phlgr/moenchengladbach-history" target="_blank" rel="noopener noreferrer"
-              class="hidden md:block text-xs text-dim hover:text-accent underline-offset-2 hover:underline mt-0.5">→ github.com/phlgr/...</a>
-          </div>
-          <p class="text-sm text-muted">history of mönchengladbach</p>
-          <div class="flex flex-wrap gap-1.5 md:col-start-3">
-            <span class="text-xs px-1.5 py-0.5 rounded-none border border-accent text-dim">typescript</span>
-            <span class="text-xs px-1.5 py-0.5 rounded-none border border-accent text-dim">react</span>
-            <span class="text-xs px-1.5 py-0.5 rounded-none border border-accent text-dim">maplibre-gl</span>
-          </div>
-        </div>
-    </section>
-    <!-- Tech Stack -->
-    <section class="mb-16">
-      <div class="flex items-center gap-3 mb-4">
-        <h2 class="text-xs font-bold tracking-widest text-muted uppercase">stack</h2>
-        <div class="flex-1 h-px bg-sep"></div>
-      </div>
-      <div class="space-y-3">
-        <div class="grid grid-cols-[90px_1fr] gap-4 items-center">
-          <span class="text-xs text-dim uppercase tracking-wider">frontend</span>
-          <div class="flex flex-wrap items-center gap-1">
-            <span class="whitespace-nowrap text-sm text-muted">typescript</span>
-            <span class="text-dim whitespace-nowrap">·</span>
-            <span class="whitespace-nowrap text-sm text-muted">react</span>
-            <span class="text-dim whitespace-nowrap">·</span>
-            <span class="whitespace-nowrap text-sm text-muted">tailwind css</span>
-            <span class="text-dim whitespace-nowrap">·</span>
-            <span class="whitespace-nowrap text-sm text-muted">tanstack (router / query / start)</span>
-          </div>
-        </div>
-        <div class="grid grid-cols-[90px_1fr] gap-4 items-center">
-          <span class="text-xs text-dim uppercase tracking-wider">backend</span>
-          <div class="flex flex-wrap items-center gap-1">
-            <span class="whitespace-nowrap text-sm text-muted">bun</span>
-            <span class="text-dim whitespace-nowrap">·</span>
-            <span class="whitespace-nowrap text-sm text-muted">elysia</span>
-            <span class="text-dim whitespace-nowrap">·</span>
-            <span class="whitespace-nowrap text-sm text-muted">trpc</span>
-            <span class="text-dim whitespace-nowrap">·</span>
-            <span class="whitespace-nowrap text-sm text-muted">drizzle orm</span>
-          </div>
-        </div>
-        <div class="grid grid-cols-[90px_1fr] gap-4 items-center">
-          <span class="text-xs text-dim uppercase tracking-wider">data</span>
-          <div class="flex flex-wrap items-center gap-1">
-            <span class="whitespace-nowrap text-sm text-muted">postgresql</span>
-            <span class="text-dim whitespace-nowrap">·</span>
-            <span class="whitespace-nowrap text-sm text-muted">clickhouse</span>
-            <span class="text-dim whitespace-nowrap">·</span>
-            <span class="whitespace-nowrap text-sm text-muted">mongodb</span>
-          </div>
-        </div>
-        <div class="grid grid-cols-[90px_1fr] gap-4 items-center">
-          <span class="text-xs text-dim uppercase tracking-wider">tooling</span>
-          <div class="flex flex-wrap items-center gap-1">
-            <span class="whitespace-nowrap text-sm text-muted">vite</span>
-            <span class="text-dim whitespace-nowrap">·</span>
-            <span class="whitespace-nowrap text-sm text-muted">biome</span>
-            <span class="text-dim whitespace-nowrap">·</span>
-            <span class="whitespace-nowrap text-sm text-muted">turborepo</span>
-          </div>
-        </div>
-        <div class="grid grid-cols-[90px_1fr] gap-4 items-center">
-          <span class="text-xs text-dim uppercase tracking-wider">infra</span>
-          <div class="flex flex-wrap items-center gap-1">
-            <span class="whitespace-nowrap text-sm text-muted">docker</span>
-            <span class="text-dim whitespace-nowrap">·</span>
-            <span class="whitespace-nowrap text-sm text-muted">hetzner</span>
-            <span class="text-dim whitespace-nowrap">·</span>
-            <span class="whitespace-nowrap text-sm text-muted">dokploy</span>
-            <span class="text-dim whitespace-nowrap">·</span>
-            <span class="whitespace-nowrap text-sm text-muted">cloudflare</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <!-- Footer -->
-  <footer class="border-t border-accent px-4 py-4 md:px-8">
-    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs tracking-wider">
-      <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-dim">
-        <a href="https://github.com/phlgr" target="_blank" rel="noopener noreferrer"
-          class="hover:text-accent underline-offset-4 hover:underline">github.com/phlgr</a>
-        <span>·</span>
-        <a href="mailto:philipp@gartz.dev" class="hover:text-accent underline-offset-4 hover:underline">philipp@gartz.dev</a>
-        <span>·</span>
-        <a href="https://www.linkedin.com/in/philipp-gartz/" target="_blank" rel="noopener noreferrer"
-          class="hover:text-accent underline-offset-4 hover:underline">linkedin.com/in/philipp-gartz</a>
-      </div>
-      <span class="text-dim">germany · <span id="year"></span></span>
+      </section>
+
+      <section class="panel" id="projects" aria-labelledby="projects-title">
+        <h2 class="panel-title" id="projects-title">Projects</h2>
+        <ul class="panel-body showcase">
+          <li class="shot">
+            <div class="thumb" aria-hidden="true">
+              <img src="./assets/examensradar.jpg" width="240" height="240" alt="" loading="lazy" />
+            </div>
+            <h3><a href="https://examensradar.de" target="_blank" rel="noopener noreferrer">examensradar</a></h3>
+            <p>Push notifications for German law students waiting on their state exam results.</p>
+            <p class="tags"><span>typescript</span><span>tRPC</span><span>tanstack start</span></p>
+            <a class="src" href="https://github.com/phlgr/examensradar" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+          </li>
+          <li class="shot">
+            <div class="thumb" aria-hidden="true">
+              <img src="./assets/eisdealer.jpg" width="240" height="240" alt="" loading="lazy" />
+            </div>
+            <h3><a href="https://eisdealer.gartz.dev" target="_blank" rel="noopener noreferrer">eisdealer-tracker</a></h3>
+            <p>Today's ice cream flavors at Die Eisdealer, read from Instagram stories with Gemini vision, plus statistics.</p>
+            <p class="tags"><span>typescript</span><span>react</span><span>tanstack start</span></p>
+            <a class="src" href="https://github.com/phlgr/eisdealer-flavor-tracker" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+          </li>
+          <li class="shot">
+            <div class="thumb" aria-hidden="true">
+              <img src="./assets/gittertiere.jpg" width="240" height="240" alt="" loading="lazy" />
+            </div>
+            <h3><a href="https://gittertiere.gartz.dev" target="_blank" rel="noopener noreferrer">gittertiere</a></h3>
+            <p>Tracks Mönchengladbach's stray shopping carts, scraped from the city's public issue tracker.</p>
+            <p class="tags"><span>typescript</span><span>react</span><span>leaflet</span></p>
+            <a class="src" href="https://github.com/phlgr/gittertiere" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+          </li>
+          <li class="shot">
+            <div class="thumb" aria-hidden="true">
+              <img src="./assets/mg-history.jpg" width="240" height="240" alt="" loading="lazy" />
+            </div>
+            <h3><a href="https://moenchengladbach-history.gartz.dev" target="_blank" rel="noopener noreferrer">moenchengladbach-history</a></h3>
+            <p>The history of Mönchengladbach on an interactive map.</p>
+            <p class="tags"><span>typescript</span><span>react</span><span>maplibre-gl</span></p>
+            <a class="src" href="https://github.com/phlgr/moenchengladbach-history" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+          </li>
+          <li class="shot">
+            <div class="thumb thumb-diff" aria-hidden="true">
+              <span class="del">- price: 49,99 €</span>
+              <span class="add">+ price: 39,99 €</span>
+              <span class="ctx">  ntfy → sent</span>
+            </div>
+            <h3><a href="https://github.com/phlgr/changebot" target="_blank" rel="noopener noreferrer">changebot</a></h3>
+            <p>Watches pages for changes and pings you on ntfy.sh. Runs on Bun and GitHub Actions.</p>
+            <p class="tags"><span>typescript</span><span>github actions</span></p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="panel" id="stack" aria-labelledby="stack-title">
+        <h2 class="panel-title" id="stack-title">Stack</h2>
+        <dl class="panel-body stack">
+          <dt>Frontend</dt>
+          <dd><span>typescript</span><span>react</span><span>tailwind css</span><span>tanstack router, query, start</span></dd>
+          <dt>Backend</dt>
+          <dd><span>bun</span><span>elysia</span><span>trpc</span><span>drizzle orm</span></dd>
+          <dt>Data</dt>
+          <dd><span>postgresql</span><span>clickhouse</span><span>mongodb</span></dd>
+          <dt>Tooling</dt>
+          <dd><span>vite</span><span>biome</span><span>turborepo</span></dd>
+          <dt>Infra</dt>
+          <dd><span>docker</span><span>hetzner</span><span>dokploy</span><span>cloudflare</span></dd>
+        </dl>
+      </section>
     </div>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Philipp Gartz. Handmade, no template.</p>
   </footer>
   <script src="./src/app.js"></script>
   <script defer data-domain="philipp.gartz.dev" src="https://apps.gartz.dev/js/script.js"></script>
