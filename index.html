@@ -50,117 +50,132 @@
   <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&display=swap" />
   <link rel="stylesheet" href="./src/styles.css" />
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
-  <div class="page">
-    <header class="head">
-      <h1>philipp<br />gartz</h1>
-      <p>full-stack typescript developer who likes turning messy public data into small, useful apps.</p>
-    </header>
+  <div class="spot" aria-hidden="true"></div>
 
-    <div class="layout">
-      <aside class="side">
-        <img class="avatar" src="./assets/avatar.jpg" width="360" height="360" alt="Philipp Gartz" />
-
-        <section class="info" aria-labelledby="now-title">
-          <h2 id="now-title">right now</h2>
-          <dl>
-            <dt>local time</dt><dd id="local-time">--:--</dd>
-            <dt>age</dt><dd class="tick" id="age">0.0000000000</dd>
-            <dt>based in</dt><dd>germany</dd>
-          </dl>
-        </section>
-
-        <section class="info" id="contact" aria-labelledby="contact-title">
-          <h2 id="contact-title">say hi</h2>
-          <p><a href="mailto:philipp@gartz.dev">philipp@gartz.dev</a></p>
-          <p><a href="https://github.com/phlgr" target="_blank" rel="noopener noreferrer">github</a> / <a href="https://www.linkedin.com/in/philipp-gartz/" target="_blank" rel="noopener noreferrer">linkedin</a></p>
-        </section>
-
-      </aside>
-
-      <main class="main">
-        <section aria-labelledby="about-title">
-          <h2 class="tape" id="about-title">about me</h2>
-          <p class="about">I build scrapers, indexers, and the apps that sit on top. Most of my side projects start with public data that's annoying to read and end as a small app that makes it readable.</p>
-        </section>
-
-        <section aria-labelledby="projects-title">
-          <h2 class="tape" id="projects-title">projects</h2>
-          <ul class="projects">
-            <li>
-              <a class="card" href="https://examensradar.de" target="_blank" rel="noopener noreferrer">
-                <img class="shot" src="./assets/examensradar.jpg" width="240" height="240" alt="" loading="lazy" />
-                <strong>examensradar</strong>
-                <span>Push notifications for German law students waiting on their state exam results.</span>
-              </a>
-              <p class="meta">typescript, tRPC, tanstack start · <a href="https://github.com/phlgr/examensradar" target="_blank" rel="noopener noreferrer">source</a></p>
-            </li>
-            <li>
-              <a class="card" href="https://eisdealer.gartz.dev" target="_blank" rel="noopener noreferrer">
-                <img class="shot" src="./assets/eisdealer.jpg" width="240" height="240" alt="" loading="lazy" />
-                <strong>eisdealer-tracker</strong>
-                <span>Today's ice cream flavors at Die Eisdealer, read from Instagram stories with Gemini vision, plus statistics.</span>
-              </a>
-              <p class="meta">typescript, react, tanstack start · <a href="https://github.com/phlgr/eisdealer-flavor-tracker" target="_blank" rel="noopener noreferrer">source</a></p>
-            </li>
-            <li>
-              <a class="card" href="https://gittertiere.gartz.dev" target="_blank" rel="noopener noreferrer">
-                <img class="shot" src="./assets/gittertiere.jpg" width="240" height="240" alt="" loading="lazy" />
-                <strong>gittertiere</strong>
-                <span>Tracks Mönchengladbach's stray shopping carts, scraped from the city's public issue tracker.</span>
-              </a>
-              <p class="meta">typescript, react, leaflet · <a href="https://github.com/phlgr/gittertiere" target="_blank" rel="noopener noreferrer">source</a></p>
-            </li>
-            <li>
-              <a class="card" href="https://moenchengladbach-history.gartz.dev" target="_blank" rel="noopener noreferrer">
-                <img class="shot" src="./assets/mg-history.jpg" width="240" height="240" alt="" loading="lazy" />
-                <strong>moenchengladbach-history</strong>
-                <span>The history of Mönchengladbach on an interactive map.</span>
-              </a>
-              <p class="meta">typescript, react, maplibre-gl · <a href="https://github.com/phlgr/moenchengladbach-history" target="_blank" rel="noopener noreferrer">source</a></p>
-            </li>
-            <li>
-              <a class="card" href="https://github.com/phlgr/changebot" target="_blank" rel="noopener noreferrer">
-                <span class="shot diff" aria-hidden="true">
-                  <span class="del">- price: 49,99 €</span>
-                  <span class="add">+ price: 39,99 €</span>
-                  <span class="ctx">  ntfy: sent</span>
-                </span>
-                <strong>changebot</strong>
-                <span>Watches pages for changes and pings you on ntfy.sh. Runs on Bun and GitHub Actions.</span>
-              </a>
-              <p class="meta">typescript, github actions</p>
-            </li>
-          </ul>
-        </section>
-
-        <section aria-labelledby="stack-title">
-          <h2 class="tape" id="stack-title">stack</h2>
-          <dl class="stack">
-            <dt>frontend</dt><dd>typescript, react, tailwind css, tanstack router, query and start</dd>
-            <dt>backend</dt><dd>bun, elysia, trpc, drizzle orm</dd>
-            <dt>data</dt><dd>postgresql, clickhouse, mongodb</dd>
-            <dt>tooling</dt><dd>vite, biome, turborepo</dd>
-            <dt>infra</dt><dd>docker, hetzner, dokploy, cloudflare</dd>
-          </dl>
-        </section>
-      </main>
+  <header class="hero">
+    <div class="name-wrap">
+      <h1 class="name" id="name">philipp gartz</h1>
     </div>
+    <div class="hero-row">
+      <img class="sticker" src="./assets/avatar.jpg" width="360" height="360" alt="Philipp Gartz" />
+      <p class="tagline intro">full-stack typescript developer who likes turning messy public data into small, useful apps.</p>
+      <dl class="now intro">
+        <dt>local time</dt><dd id="local-time">--:--</dd>
+        <dt>age</dt><dd class="tick" id="age">0.0000000000</dd>
+        <dt>based in</dt><dd>germany</dd>
+      </dl>
+      <nav class="pills intro" aria-label="Contact">
+        <a class="pill magnetic" href="mailto:philipp@gartz.dev">email</a>
+        <a class="pill magnetic" href="https://github.com/phlgr" target="_blank" rel="noopener noreferrer">github</a>
+        <a class="pill magnetic" href="https://www.linkedin.com/in/philipp-gartz/" target="_blank" rel="noopener noreferrer">linkedin</a>
+      </nav>
+    </div>
+  </header>
 
-    <footer class="foot">
-      <ul class="buttons" aria-label="Site badges">
-        <li class="b88"><i>made with</i><b>bun</b></li>
-        <li class="b88"><i>written in</i><b>ts</b></li>
-        <li class="b88"><i>no</i><b>cookies</b></li>
-        <li class="b88"><i>made in</i><b>germany</b></li>
-        <li><a class="b88" href="https://github.com/phlgr/portfolio" target="_blank" rel="noopener noreferrer"><i>view</i><b>source</b></a></li>
+  <main>
+    <section class="about wrap" aria-labelledby="about-title">
+      <h2 class="label" id="about-title" data-reveal>about me</h2>
+      <p class="statement" id="statement">I build scrapers, indexers, and the apps that sit on top. Most of my side projects start with public data that's annoying to read and end as a small app that makes it readable.</p>
+    </section>
+
+    <section class="bands" aria-labelledby="stack-title">
+      <h2 class="sr-only" id="stack-title">stack</h2>
+      <ul class="sr-only">
+        <li>frontend: typescript, react, tailwind css, tanstack router, query and start</li>
+        <li>backend: bun, elysia, trpc, drizzle orm</li>
+        <li>data: postgresql, clickhouse, mongodb</li>
+        <li>tooling: vite, biome, turborepo</li>
+        <li>infra: docker, hetzner, dokploy, cloudflare</li>
       </ul>
-      <p><a href="mailto:philipp@gartz.dev?subject=Guestbook">sign my guestbook</a> · © <span id="year"></span> philipp gartz</p>
-    </footer>
-  </div>
+      <div class="band band-a" aria-hidden="true">
+        <div class="track">
+          <span>typescript</span><span>react</span><span>tailwind css</span><span>tanstack</span><span>bun</span><span>elysia</span><span>trpc</span><span>drizzle orm</span>
+          <span>typescript</span><span>react</span><span>tailwind css</span><span>tanstack</span><span>bun</span><span>elysia</span><span>trpc</span><span>drizzle orm</span>
+        </div>
+      </div>
+      <div class="band band-b" aria-hidden="true">
+        <div class="track">
+          <span>postgresql</span><span>clickhouse</span><span>mongodb</span><span>vite</span><span>biome</span><span>turborepo</span><span>docker</span><span>hetzner</span><span>dokploy</span><span>cloudflare</span>
+          <span>postgresql</span><span>clickhouse</span><span>mongodb</span><span>vite</span><span>biome</span><span>turborepo</span><span>docker</span><span>hetzner</span><span>dokploy</span><span>cloudflare</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="sheet">
+      <section class="work wrap" id="projects" aria-labelledby="projects-title">
+        <h2 class="label" id="projects-title" data-reveal>projects</h2>
+        <ul class="rows">
+          <li class="row" data-reveal>
+            <img class="thumb" src="./assets/examensradar.jpg" width="640" height="640" alt="" loading="lazy" />
+            <a class="row-name" href="https://examensradar.de" target="_blank" rel="noopener noreferrer">examensradar</a>
+            <div class="row-info">
+              <p>Push notifications for German law students waiting on their state exam results.</p>
+              <p class="meta">typescript, tRPC, tanstack start · <a href="https://github.com/phlgr/examensradar" target="_blank" rel="noopener noreferrer">source</a></p>
+            </div>
+          </li>
+          <li class="row" data-reveal>
+            <img class="thumb" src="./assets/eisdealer.jpg" width="640" height="640" alt="" loading="lazy" />
+            <a class="row-name" href="https://eisdealer.gartz.dev" target="_blank" rel="noopener noreferrer">eisdealer-tracker</a>
+            <div class="row-info">
+              <p>Today's ice cream flavors at Die Eisdealer, read from Instagram stories with Gemini vision, plus statistics.</p>
+              <p class="meta">typescript, react, tanstack start · <a href="https://github.com/phlgr/eisdealer-flavor-tracker" target="_blank" rel="noopener noreferrer">source</a></p>
+            </div>
+          </li>
+          <li class="row" data-reveal>
+            <img class="thumb" src="./assets/gittertiere.jpg" width="640" height="640" alt="" loading="lazy" />
+            <a class="row-name" href="https://gittertiere.gartz.dev" target="_blank" rel="noopener noreferrer">gittertiere</a>
+            <div class="row-info">
+              <p>Tracks Mönchengladbach's stray shopping carts, scraped from the city's public issue tracker.</p>
+              <p class="meta">typescript, react, leaflet · <a href="https://github.com/phlgr/gittertiere" target="_blank" rel="noopener noreferrer">source</a></p>
+            </div>
+          </li>
+          <li class="row" data-reveal>
+            <img class="thumb" src="./assets/mg-history.jpg" width="560" height="560" alt="" loading="lazy" />
+            <a class="row-name" href="https://moenchengladbach-history.gartz.dev" target="_blank" rel="noopener noreferrer">moenchengladbach&shy;-history</a>
+            <div class="row-info">
+              <p>The history of Mönchengladbach on an interactive map.</p>
+              <p class="meta">typescript, react, maplibre-gl · <a href="https://github.com/phlgr/moenchengladbach-history" target="_blank" rel="noopener noreferrer">source</a></p>
+            </div>
+          </li>
+          <li class="row" data-reveal>
+            <span class="thumb diff" aria-hidden="true">
+              <span class="del">- price: 49,99 €</span>
+              <span class="add">+ price: 39,99 €</span>
+              <span class="ctx">  ntfy: sent</span>
+            </span>
+            <a class="row-name" href="https://github.com/phlgr/changebot" target="_blank" rel="noopener noreferrer">changebot</a>
+            <div class="row-info">
+              <p>Watches pages for changes and pings you on ntfy.sh. Runs on Bun and GitHub Actions.</p>
+              <p class="meta">typescript, github actions</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <footer class="outro wrap">
+        <h2 class="label" data-reveal>say hi</h2>
+        <a class="mega" href="mailto:philipp@gartz.dev" data-reveal>philipp@gartz.dev</a>
+        <div class="outro-foot">
+          <ul class="buttons" aria-label="Site badges">
+            <li class="b88"><i>made with</i><b>bun</b></li>
+            <li class="b88"><i>written in</i><b>ts</b></li>
+            <li class="b88"><i>no</i><b>cookies</b></li>
+            <li class="b88"><i>made in</i><b>germany</b></li>
+            <li><a class="b88" href="https://github.com/phlgr/portfolio" target="_blank" rel="noopener noreferrer"><i>view</i><b>source</b></a></li>
+          </ul>
+          <p><a href="mailto:philipp@gartz.dev?subject=Guestbook">sign my guestbook</a> · © <span id="year"></span> philipp gartz</p>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <div class="preview" id="preview" aria-hidden="true"></div>
+
   <script src="./src/app.js"></script>
   <script defer data-domain="philipp.gartz.dev" src="https://apps.gartz.dev/js/script.js"></script>
 </body>
