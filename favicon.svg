@@ -1,11 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <defs>
-    <linearGradient id="b" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#4d9ad6"/>
-      <stop offset="1" stop-color="#123f6a"/>
-    </linearGradient>
-  </defs>
-  <rect x="1" y="1" width="30" height="30" rx="7" fill="url(#b)" stroke="#0a2640"/>
-  <path d="M2 8a6 6 0 0 1 6-6h16a6 6 0 0 1 6 6v7H2z" fill="#fff" opacity=".22"/>
-  <text x="16" y="23" text-anchor="middle" font-family="Open Sans, Segoe UI, Arial, sans-serif" font-size="19" font-weight="800" fill="#fff">p</text>
+  <rect x="3" y="3" width="28" height="28" rx="6" fill="#17152b"/>
+  <rect x="1" y="1" width="27" height="27" rx="6" fill="#ffe45c" stroke="#17152b" stroke-width="2"/>
+  <text x="14.5" y="21.5" text-anchor="middle" font-family="Bricolage Grotesque, Arial Black, sans-serif" font-size="20" font-weight="800" fill="#5b3df5">p</text>
 </svg>

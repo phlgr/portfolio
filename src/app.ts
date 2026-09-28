@@ -20,21 +20,9 @@
 		hour: "2-digit",
 		minute: "2-digit",
 	});
-	const hourOf = new Intl.DateTimeFormat("en-GB", {
-		timeZone: "Europe/Berlin",
-		hour: "numeric",
-		hourCycle: "h23",
-	});
 
 	function updateClock() {
-		const now = new Date();
-		const hour = Number(hourOf.format(now));
-		const awake = hour >= 8;
-		$("local-time").textContent = clock.format(now);
-		$("status").classList.toggle("away", !awake);
-		$("status-text").textContent = awake
-			? "Online"
-			: "Away, it's night in Germany";
+		$("local-time").textContent = clock.format(new Date());
 	}
 
 	update();
