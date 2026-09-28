@@ -321,12 +321,12 @@ main {
 .track {
 	display: flex;
 	width: max-content;
-	animation: marquee 40s linear infinite;
+	animation: marquee 100s linear infinite;
 }
 
 .band-b .track {
 	animation-direction: reverse;
-	animation-duration: 48s;
+	animation-duration: 120s;
 }
 
 .track span {
