@@ -171,7 +171,10 @@
 			pos.x += vx * 0.14;
 			pos.y += (pointer.y - pos.y) * 0.14;
 			const tilt = clamp(vx * 0.06, -14, 14);
-			preview.style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0) translate(-50%, -50%) rotate(${tilt}deg)`;
+			// Sit beside the cursor, never under it; flip left near the right edge
+			const fitsRight = pos.x + 24 + preview.offsetWidth < innerWidth;
+			const dx = fitsRight ? "24px" : "calc(-100% - 24px)";
+			preview.style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0) translate(${dx}, -50%) rotate(${tilt}deg)`;
 		}
 		requestAnimationFrame(frame);
 	}
