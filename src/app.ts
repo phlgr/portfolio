@@ -143,8 +143,11 @@
 			});
 		}
 
+		// Only the project name triggers the preview, so it never covers the source links
 		for (const row of document.querySelectorAll<HTMLElement>(".row")) {
-			row.addEventListener("pointerenter", () => {
+			const link = row.querySelector<HTMLElement>(".row-name");
+			if (!link) continue;
+			link.addEventListener("pointerenter", () => {
 				const thumb = row.querySelector(".thumb");
 				if (thumb) preview.replaceChildren(thumb.cloneNode(true));
 				if (!previewOn) {
@@ -154,7 +157,7 @@
 				previewOn = true;
 				preview.classList.add("on");
 			});
-			row.addEventListener("pointerleave", () => {
+			link.addEventListener("pointerleave", () => {
 				previewOn = false;
 				preview.classList.remove("on");
 			});
