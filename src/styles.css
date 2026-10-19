@@ -288,6 +288,9 @@ main {
 .bands {
 	position: relative;
 	height: 380px;
+	/* The 120vw rotated bands bleed past the viewport; body clip alone
+	   doesn't stop the page from scrolling sideways */
+	overflow-x: clip;
 }
 
 .band {
