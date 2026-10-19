@@ -29,7 +29,6 @@
 
 	body {
 		min-height: 100vh;
-		overflow-x: clip;
 		background-image: radial-gradient(#17152b1f 1px, transparent 1px);
 		background-size: 18px 18px;
 		background-attachment: fixed;
@@ -90,7 +89,6 @@
 	font-variant-numeric: tabular-nums;
 }
 
-/* Cursor spotlight: violet dots aligned with the page grid */
 .spot {
 	position: fixed;
 	inset: 0;
@@ -116,7 +114,6 @@ main {
 	z-index: 1;
 }
 
-/* ── Hero ───────────────────────────────────────────── */
 .hero {
 	max-width: 1400px;
 	margin: 0 auto;
@@ -125,7 +122,6 @@ main {
 
 .name {
 	display: inline-block;
-	/* JS fits this to the width; this is the no-JS fallback */
 	font-size: 19vw;
 	line-height: 0.82;
 	padding-bottom: 0.1em;
@@ -264,7 +260,6 @@ main {
 	}
 }
 
-/* ── About ──────────────────────────────────────────── */
 .about {
 	padding-top: 160px;
 	padding-bottom: 120px;
@@ -284,12 +279,9 @@ main {
 	transition: opacity 200ms linear;
 }
 
-/* ── Stack bands ────────────────────────────────────── */
 .bands {
 	position: relative;
 	height: 380px;
-	/* The 120vw rotated bands bleed past the viewport; body clip alone
-	   doesn't stop the page from scrolling sideways */
 	overflow-x: clip;
 }
 
@@ -359,7 +351,6 @@ main {
 	}
 }
 
-/* ── Projects (dark sheet) ──────────────────────────── */
 .sheet {
 	position: relative;
 	margin-top: 60px;
@@ -469,7 +460,6 @@ main {
 	color: #a7a3c9;
 }
 
-/* Floating preview that follows the cursor over project rows */
 .preview {
 	position: fixed;
 	top: 0;
@@ -498,7 +488,6 @@ main {
 	object-position: top;
 }
 
-/* ── Outro ──────────────────────────────────────────── */
 .outro {
 	padding-top: 100px;
 	padding-bottom: 40px;
@@ -543,7 +532,6 @@ main {
 	color: #8d89ad;
 }
 
-/* ── Scroll reveals ─────────────────────────────────── */
 .js [data-reveal] {
 	opacity: 0;
 	transform: translateY(40px);
@@ -557,7 +545,6 @@ main {
 	transform: none;
 }
 
-/* ── Small screens ──────────────────────────────────── */
 @media (max-width: 860px) {
 	.hero-row {
 		grid-template-columns: 120px minmax(0, 1fr);
@@ -620,7 +607,6 @@ main {
 	}
 }
 
-/* Touch devices get inline thumbnails instead of the cursor preview */
 @media (hover: none) {
 	.row {
 		grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);

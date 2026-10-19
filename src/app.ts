@@ -1,8 +1,9 @@
 (() => {
 	const birth = new Date(2000, 8, 11);
 	const $ = (id: string) => {
-		// biome-ignore lint/style/noNonNullAssertion: element exists in HTML
-		return document.getElementById(id)!;
+		const el = document.getElementById(id);
+		if (!el) throw new Error(`#${id} not found`);
+		return el;
 	};
 	const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 	const finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
@@ -10,7 +11,6 @@
 
 	$("year").textContent = String(new Date().getFullYear());
 
-	// Age ticker and local clock
 	const ageEl = $("age");
 	const clock = new Intl.DateTimeFormat("en-GB", {
 		timeZone: "Europe/Berlin",
@@ -32,7 +32,6 @@
 	updateClock();
 	setInterval(updateClock, 30_000);
 
-	// Name: split into letters and fit to the hero width
 	const name = $("name");
 	const nameText = name.textContent ?? "";
 	name.setAttribute("aria-label", nameText);
@@ -59,7 +58,6 @@
 	document.fonts.ready.then(fitName);
 	addEventListener("resize", fitName);
 
-	// About statement: words light up as it scrolls through the viewport
 	const statement = $("statement");
 	const words = (statement.textContent ?? "").trim().split(/\s+/);
 	statement.textContent = "";
@@ -85,7 +83,6 @@
 	updateStatement();
 	addEventListener("scroll", updateStatement, { passive: true });
 
-	// Scroll reveals
 	const revealEls = document.querySelectorAll("[data-reveal]");
 	if (reduce || !("IntersectionObserver" in window)) {
 		for (const el of revealEls) el.classList.add("in");
@@ -103,10 +100,10 @@
 		for (const el of revealEls) io.observe(el);
 	}
 
-	// Pointer effects: spotlight, letter weight, magnetic pills, row preview
 	const pointer = { x: -999, y: -999 };
 	const preview = $("preview");
 	const pos = { x: 0, y: 0 };
+	const PREVIEW_GAP = 24;
 	let previewOn = false;
 
 	if (finePointer && !reduce) {
@@ -143,11 +140,10 @@
 			});
 		}
 
-		// Only the project name triggers the preview, so it never covers the source links
 		for (const row of document.querySelectorAll<HTMLElement>(".row")) {
-			const link = row.querySelector<HTMLElement>(".row-name");
-			if (!link) continue;
-			link.addEventListener("pointerenter", () => {
+			const previewTrigger = row.querySelector<HTMLElement>(".row-name");
+			if (!previewTrigger) continue;
+			previewTrigger.addEventListener("pointerenter", () => {
 				const thumb = row.querySelector(".thumb");
 				if (thumb) preview.replaceChildren(thumb.cloneNode(true));
 				if (!previewOn) {
@@ -157,7 +153,7 @@
 				previewOn = true;
 				preview.classList.add("on");
 			});
-			link.addEventListener("pointerleave", () => {
+			previewTrigger.addEventListener("pointerleave", () => {
 				previewOn = false;
 				preview.classList.remove("on");
 			});
@@ -171,9 +167,10 @@
 			pos.x += vx * 0.14;
 			pos.y += (pointer.y - pos.y) * 0.14;
 			const tilt = clamp(vx * 0.06, -14, 14);
-			// Sit beside the cursor, never under it; flip left near the right edge
-			const fitsRight = pos.x + 24 + preview.offsetWidth < innerWidth;
-			const dx = fitsRight ? "24px" : "calc(-100% - 24px)";
+			const fitsRight = pos.x + PREVIEW_GAP + preview.offsetWidth < innerWidth;
+			const dx = fitsRight
+				? `${PREVIEW_GAP}px`
+				: `calc(-100% - ${PREVIEW_GAP}px)`;
 			preview.style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0) translate(${dx}, -50%) rotate(${tilt}deg)`;
 		}
 		requestAnimationFrame(frame);
