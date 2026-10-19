@@ -126,7 +126,7 @@ main {
 	line-height: 0.82;
 	padding-bottom: 0.1em;
 	overflow: hidden;
-	white-space: nowrap;
+	white-space: pre;
 	font-weight: 800;
 	font-variation-settings: "wdth" 75;
 	letter-spacing: -0.02em;
