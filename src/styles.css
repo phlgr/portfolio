@@ -197,10 +197,14 @@ main {
 	font-size: 1.25rem;
 	line-height: 1.35;
 	color: var(--soft);
+}
+
+.tagline span {
 	background: var(--paper);
-	padding: 14px 18px;
-	border-radius: 16px;
-	box-shadow: 0 8px 24px #17152b14;
+	padding: 2px 8px;
+	border-radius: 8px;
+	box-decoration-break: clone;
+	-webkit-box-decoration-break: clone;
 }
 
 .now {
