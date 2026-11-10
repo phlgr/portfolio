@@ -198,13 +198,14 @@ main {
 	line-height: 1.35;
 	color: var(--soft);
 	overflow: clip;
-	border-radius: 8px 0 0 8px;
+	border-radius: 10px 0 0 10px;
+	padding-block: 4px;
 }
 
 .tagline span {
 	background: var(--bg);
-	padding: 2px 8px;
-	border-radius: 0 8px 8px 0;
+	padding: 5px 14px;
+	border-radius: 0 10px 10px 0;
 	box-decoration-break: clone;
 	-webkit-box-decoration-break: clone;
 }
