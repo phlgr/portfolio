@@ -199,12 +199,12 @@ main {
 	color: var(--soft);
 	overflow: clip;
 	border-radius: 10px 0 0 10px;
-	padding-block: 4px;
+	padding-block: 3px;
 }
 
 .tagline span {
 	background: var(--bg);
-	padding: 5px 14px;
+	padding: 4px 11px;
 	border-radius: 0 10px 10px 0;
 	box-decoration-break: clone;
 	-webkit-box-decoration-break: clone;
